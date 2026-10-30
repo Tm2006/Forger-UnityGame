@@ -65,4 +65,4 @@ This is a collaborative university project created as part of the course:
 
 ## 📌 Notes
 
-This project is in early development. The current build demonstrates only the basic drawing mechanic, which will serve as the foundation for all future forgery tools and gameplay systems.
+This project is in early development. The current build demonstrates only the basic drawing mechanic, which will serve as the foundation for all future forgery tools and gameplay systems. X
