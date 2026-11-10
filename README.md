@@ -6,7 +6,7 @@
 
 ## 🎮 About the Game
 
-**Forger** is a 2D game where the player must forge various documents to complete missions.
+**Forger** is a 3D game where the player must forge various documents to complete missions.
 
 The core concept: imagine you need to fake a report for your boss, forge a parent's signature on a school note, stamp an official document, or replicate a signature you've never actually signed. The game revolves around the art of deception — using a variety of forgery tools to create convincing fakes and fool the system.
 
