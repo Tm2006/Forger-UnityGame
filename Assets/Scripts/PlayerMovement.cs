@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
     void OnDisable()
     {
         input.Player.Disable();
-        input.Dispose();
-        speed = 0f;
+        moveInput = Vector2.zero;
+        rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0); 
     }
     
     void OnDestroy()
@@ -38,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(moveInput.x, 0, moveInput.y);
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        Vector3 direction = transform.forward * moveInput.y + transform.right * moveInput.x;
+        direction = Vector3.ClampMagnitude(direction, 1f);
+        Vector3 velocity = direction * speed;
+        velocity.y = rb.linearVelocity.y;
+        rb.linearVelocity = velocity;
     }
 }
