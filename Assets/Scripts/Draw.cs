@@ -30,8 +30,10 @@ public class Draw : MonoBehaviour
 
     float xMult;
     float yMult;
+    public Collider canvasCollider;
 
-    private void Start()
+
+    private void Awake()
     {
         colorMap = new Color[totalXpixels * totalYpixels];
         generatedTexture = new Texture2D(totalXpixels, totalYpixels, TextureFormat.RGBA32, false);
@@ -56,12 +58,16 @@ public class Draw : MonoBehaviour
             pressedLastFrame = false;
         }
     }
+    private void OnDisable()
+    {
+        pressedLastFrame = false;
+    }
 
     void CalculatePixel()
     {
         Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (canvasCollider.Raycast(ray, out hit, 10f))
         {
             point.position = hit.point;
             xPixel = (int)((point.localPosition.x - topLeftCorner.localPosition.x) * xMult);

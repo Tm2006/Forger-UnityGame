@@ -23,7 +23,6 @@ public class InteractZone : MonoBehaviour
         {
             playerInRange = true;
             SetPromptVisible(true);
-            Debug.Log("Игрок вошёл в зону полотна");
 
         }
     }
@@ -33,7 +32,6 @@ public class InteractZone : MonoBehaviour
         {
             playerInRange = false;
             SetPromptVisible(false);
-            Debug.Log("Игрок вышел из зоны полотна");
         }
     }
 }
